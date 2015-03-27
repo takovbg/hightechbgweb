@@ -1,0 +1,80 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    244,
+                    105
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Events",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "548869178090"
+                },
+                "propertyGroup": {
+                    "properties": []
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "This extension connects to the sagenta.net, get booking info and set some info.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "0.0.1"
+        },
+        "extensionKey": "sagenda_booking",
+        "name": "Sagenda Booking",
+        "originalExtensionKey": "sagenda_booking",
+        "persons": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Events => list, show, edit, delete, update, new, create",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "SagendaBooking",
+                "name": "Sagenda Booking"
+            }
+        ],
+        "vendorName": "Iteration"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2014-12-18 03:37",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (2)"
+    }
+}

@@ -1,0 +1,46 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Bookable Item List</h1>
+
+<f:flashMessages renderMode="div" />
+
+
+<p><p>
+<f:format.html parseFuncTSPath="">Bookable Event: <br /> {json}</f:format.html>
+
+
+<p><p>
+<f:format.html parseFuncTSPath="">json_id: <br /> {json_id}</f:format.html>
+
+
+<p><p>
+<f:format.html parseFuncTSPath="">json_id_2: <br /> {json_id_2.Id}</f:format.html>
+
+<p><p>
+<f:format.html parseFuncTSPath="">json.0.id: <br /> {json_array.0.Id}</f:format.html>
+
+
+<p><p>
+<f:for each="{json_array}" as="event">
+ <f:format.html  parseFuncTSPath="">Bookable Items: <br />  </f:format.html>
+ <p>
+ <f:format.html  parseFuncTSPath="">Id:  {event.Id} <br /> </f:format.html>
+ <f:format.html  parseFuncTSPath="">Name: {event.Name} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">Location: {event.Location} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">Description: {event.Description}</f:format.html>
+</f:for>
+
+</f:section>

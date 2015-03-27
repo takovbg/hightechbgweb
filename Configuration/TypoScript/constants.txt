@@ -1,0 +1,15 @@
+
+plugin.tx_sagendabooking {
+	view {
+		# cat=plugin.tx_sagendabooking/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:sagenda_booking/Resources/Private/Templates/
+		# cat=plugin.tx_sagendabooking/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:sagenda_booking/Resources/Private/Partials/
+		# cat=plugin.tx_sagendabooking/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:sagenda_booking/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_sagendabooking//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

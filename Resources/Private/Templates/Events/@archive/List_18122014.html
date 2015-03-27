@@ -1,0 +1,79 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Booking Items</h1>
+
+<f:flashMessages renderMode="div" />
+
+<p><p>
+<f:for each="{bookingEvents}" as="event">
+ 
+ <p>
+ <f:format.html  parseFuncTSPath="">Id:  {event.Id} <br /> </f:format.html>
+ <f:format.html  parseFuncTSPath="">Name: {event.Name} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">Location: {event.Location} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">Description: {event.Description} <br /><br /></f:format.html>
+</f:for>
+
+
+<h1>Bookable Events</h1>
+
+<f:flashMessages renderMode="div" />
+
+<p><p>
+<f:for each="{bookableItems}" as="bookableEvent">
+ 
+ <p>
+ <f:format.html  parseFuncTSPath="">Title:  {bookableEvent.Title} <br /> </f:format.html>
+ <f:format.html  parseFuncTSPath="">From: {bookableEvent.From} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">To: {bookableEvent.To} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">EventScheduleType: {bookableEvent.EventScheduleType} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">EventScheduleId: {bookableEvent.EventScheduleId} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">IsAllDay: {bookableEvent.IsAllDay} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">IsRecurring: {bookableEvent.IsRecurring} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">DateDisplay: {bookableEvent.DateDisplay} <br /></f:format.html> 
+ <f:format.html  parseFuncTSPath="">EventIdentifier: {bookableEvent.EventIdentifier} <br /></f:format.html>
+ <f:format.html  parseFuncTSPath="">BookableItems: {bookableEvent.BookableItems} <br /></f:format.html>
+ 
+ <f:for each="{bookableEvent.BookableItems}" as="eventOwnerData">
+   <f:format.html  parseFuncTSPath="">&nbsp;&nbsp;- event[Id]: {eventOwnerData.Id} <br /></f:format.html>
+   <f:format.html  parseFuncTSPath="">&nbsp;&nbsp;- event[Name]: {eventOwnerData.Name} <br /></f:format.html>
+   <f:format.html  parseFuncTSPath="">&nbsp;&nbsp;- event[Location]: {eventOwnerData.Location} <br /></f:format.html>
+   <f:format.html  parseFuncTSPath="">&nbsp;&nbsp;- event[Description]: {eventOwnerData.Description} <br /><br /></f:format.html>
+ </f:for>
+ 
+</f:for>
+
+
+
+<h1>Validate Account</h1>
+
+<p>
+ <f:format.html  parseFuncTSPath="">Success:  {validateAccount.Success} <br /> </f:format.html>
+ <f:format.html  parseFuncTSPath="">Message: {validateAccount.Message} <br /></f:format.html>
+
+ 
+<h1>SetBooking Status</h1>
+
+<p>
+ <f:format.html  parseFuncTSPath="">Success:  {setBookingStatus.Success} <br /> </f:format.html>
+ <f:format.html  parseFuncTSPath="">Message: {setBookingStatus.Message} <br /></f:format.html>
+
+  
+ 
+ 
+</f:section>
+
+
